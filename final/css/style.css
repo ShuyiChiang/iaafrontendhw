@@ -1,0 +1,411 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url("rwd.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+/* For animation transition */
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+::selection{
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);/*選取範圍反白*/
+}
+
+body{
+    background:rgb(0, 0, 0);
+    /*   cursor: none; */
+}
+
+::-moz-selection{/*firefox*/
+    color: rgba(255,255,255,1);
+    background: rgb(255, 255, 255);
+}
+
+/* header */
+header{
+	position:relative;
+	padding:15px 0px;
+	color:rgba(255, 255, 255, 1);
+	background:rgb(0, 0, 0);
+	text-align:center;
+}
+
+
+.menu{
+	position:absolute;
+	right:20px;
+	top:20px;
+	width:30px;
+	height:30px;
+	font-size:30px;
+	display:block;
+}
+
+.menu:hover{
+	cursor:pointer;
+}
+
+.name{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+/* nav*/
+nav{
+	width:100%;
+	margin:auto;
+	text-align:center;
+	font-size:18px;
+
+    border-bottom: 1px solid white;
+}
+
+li {
+    margin-bottom: 0px;
+    border-bottom:solid rgb(255, 255, 255) 1px;
+}
+
+.text-link {
+    display: inline-block;
+    padding:20px 30px;
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.text-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background:rgb(255, 255, 255);
+    transition: width .3s;
+}
+
+.text-link:hover::after {
+    width: 100%;
+}
+
+nav li a i{
+    padding:20px 30px;
+    color:rgb(255, 255, 255,1);
+
+    transition: color 0.3s;/*為卡片的背景色和文字顏色添加過渡效果*/
+    -webkit-transition:color 0.3s,;/*為 Safari 瀏覽器添加兼容性*/
+}
+
+nav li a i:hover{
+    color:rgb(255, 255, 255,.5);
+}
+  
+
+ /*section*/
+ section{
+    position: relative;
+    width:100%;
+    height: 400px;
+    overflow: hidden;/*把多出來的內容隱藏*/
+    margin: 0px auto 0px;/*跟上面的區塊距離100px 下緣0px*/
+}
+
+.left{
+    position: absolute;
+    box-sizing: border-box;/*往內容框框內長*/
+    width: 50%;
+    left:40px;
+    top:20px;
+    padding:0px;
+    z-index: 20;
+}
+
+.left h1{
+    font-size:40px;
+    line-height: 1em;
+    padding-bottom: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.left p{
+    width: 100%;
+    height: 100%;
+    color: rgb(130, 130, 130);
+    font-weight: 400;
+}
+
+.right{
+    position: relative;
+    box-sizing: border-box;/*往內容框框內長*/
+    top:80px;
+    width:170%;
+}
+
+
+
+
+
+/*quote*/
+.quote{
+    position: relative;
+    box-sizing: border-box;/*往內容框框內長*/
+    max-width: 100%;
+    top:0px;
+    padding:0px;
+    overflow: hidden;/*把多出來的內容隱藏*/
+
+    height: 450px;
+    margin: 20px auto 0px;/*跟上面的區塊距離100px 下緣0px*/
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.quote h1{
+    font-size:28px;
+    font-weight: 500;
+    line-height: 1.3em;
+    padding-bottom: 20px;
+    color: rgb(255, 255, 255);
+    max-width: 80%;
+    text-align: center;/*內容全數置中*/
+    margin: 30px auto 0px;/*跟上面的區塊距離30px 下緣0px*/
+}
+
+.quote p{
+    font-size:14px;
+    font-weight: 400;
+    padding-bottom: 0px;
+    letter-spacing: 6px;
+    line-height: 1.8em;
+    color: rgb(130, 130, 130);
+    max-width: 80%;
+    text-align: center;/*內容全數置中*/
+    margin:1px auto 30px;/*跟上面的區塊距離100px 下緣0px*/
+}
+
+.quote img{
+    max-width:100%;
+}
+
+/*project*/
+.project h1 {
+    font-size:50px;
+    font-weight: 500;
+    line-height: 1.3em;
+    padding-bottom: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;/*內容全數置中*/
+    margin: 20px auto 0px;/*跟上面的區塊距離20px 下緣0px*/
+}
+
+.project p{
+    font-weight: 300;
+    text-align: left;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+
+.project{
+    width:90%;
+    margin: auto;
+    padding:0px 0px;
+    text-align:center;
+    color:rgb(255, 255, 255);
+    line-height:1.8em;
+    font-size:1em;
+}
+
+.project img{
+    width:100%;
+    
+    transition: opacity 0.5s; /* 添加透明度过渡效果 */
+    
+    transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;/* Safari */
+
+}
+
+.project img:hover{
+    opacity: 0.5;
+    cursor: pointer;
+
+}
+
+
+/*footer*/
+footer{
+    clear: both;
+    padding:80px 0px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+}
+
+#sketch-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+
+/*===============rwd details===============*/
+
+/* 768px 以上的螢幕寬樣式 */
+/* For tablets */
+@media only screen and (min-width: 768px) { 
+
+    .name{
+        font-size: 36px;
+    }
+
+	nav{
+		position: -webkit-sticky;
+		position:sticky;
+		top:0;
+		z-index:20;/* Z軸順序 z-index 较大的重叠元素会覆盖较小的元素*/
+	}
+
+	nav li{
+		display: inline-block;
+		border-bottom:solid rgba(255, 255, 255, 1) 0px;
+	}
+
+	
+	.menu{
+		display:none;	
+	}
+	
+	section{
+		line-height:2.5em;
+		font-size:1.1em;
+	}
+
+
+
+    /*quote section*/
+    .quote{
+        box-sizing: border-box;/*往內容框框內長*/
+        max-width: 100%;
+        top:0px;
+        padding:0px;
+
+
+        height: 850px;
+        margin: 0px auto 0px;/*跟上面的區塊距離100px 下緣0px*/
+        text-align: center;
+        background-color: rgb(0, 0, 0);
+    }
+
+    .quote h1{
+        font-size:60px;
+        font-weight: 500;
+        line-height: 1.3em;
+        padding-bottom: 20px;
+        color: rgb(255, 255, 255);
+        text-align: center;/*內容全數置中*/
+        margin: 80px auto 0px;/*跟上面的區塊距離100px 下緣0px*/
+    }
+
+    .quote p{
+        font-size:24px;
+        font-weight: 400;
+        padding-bottom: 0px;
+        letter-spacing: 10px;
+        color: rgb(130, 130, 130);
+        text-align: center;/*內容全數置中*/
+        margin:20px auto 60px;/*跟上面的區塊距離100px 下緣0px*/
+    }
+
+
+
+    
+	
+}
+
+/* For pad */
+@media only screen and (min-width: 768px) {
+/*section*/
+
+section{
+    position: relative;
+    width:100%;
+    height: 550px;
+    overflow: hidden;/*把多出來的內容隱藏*/
+    margin: 0px auto 0px;/*跟上面的區塊距離100px 下緣0px*/
+
+
+}
+
+.left{
+    position: absolute;
+    box-sizing: border-box;/*往內容框框內長*/
+    width: 50%;
+    left:50px;
+    top:100px;
+    padding:0px;
+    z-index: 20;
+}
+
+.left h1{
+    font-size:60px;
+    line-height: 1.15em;
+    padding-bottom: 20px;
+}
+
+.left p{
+    width: 100%;
+    height: 100%;
+    color: rgb(130, 130, 130);
+}
+
+.right{
+    top:0px;
+    width:150%;
+}
+
+}
+
+
+/* For desktop */
+@media only screen and (min-width: 1200px) {
+
+.right{
+    top:0px;
+    width:100%;
+
+}
+
+
+.project h1 {
+    font-size:50px;
+    font-weight: 500;
+    line-height: 1.3em;
+    padding-bottom: 40px;
+    color: rgb(255, 255, 255);
+    text-align: center;/*內容全數置中*/
+    margin: 40px auto 0px;/*跟上面的區塊距離20px 下緣0px*/
+}
+
+}
+
